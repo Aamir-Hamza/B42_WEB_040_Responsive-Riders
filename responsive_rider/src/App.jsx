@@ -4,11 +4,13 @@ import { ProtectedRoute } from './context/ProtectedRoute';
 import DashBoard from './components/DashBoard';
 import Login from './components/Login';
 import Registration from './components/Registration';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
     <AuthProvider>
         <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/dashboard" element={<ProtectedRoute><DashBoard /></ProtectedRoute>} />
