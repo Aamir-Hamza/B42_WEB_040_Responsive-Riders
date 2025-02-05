@@ -9,8 +9,10 @@ import {
   Target,
   Gamepad2,
   Rocket,
-  AlertCircle
+  AlertCircle,
+  LogIn
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Registration() {
   const [userData, setUserData] = useState({
@@ -96,7 +98,7 @@ export default function Registration() {
   function handleChange(e) {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
-    setError(""); // Clear error when user starts typing
+    setError(""); 
   }
 
   return (
@@ -197,6 +199,15 @@ export default function Registration() {
             <Rocket className="w-5 h-5" />
             {isLoading ? 'Registering...' : 'Start Your Journey'}
           </button>
+           <div className="text-center mt-4">
+            <Link 
+              to="/login" 
+              className="text-blue-600 hover:underline flex items-center justify-center gap-2"
+            >
+              <LogIn className="w-5 h-5" />
+              Already have an account? Login Here
+            </Link>
+          </div>
         </form>
       </div>
     </div>
