@@ -16,7 +16,8 @@ const MCQGenerator = () => {
           {
             "question": "What is 2+2?",
             "options": ["3", "4", "5", "6"],
-            "correct_answer": "4"
+            "correct_answer": "4",
+            "Subject":"Math"
           }
         ]
       }
@@ -24,6 +25,7 @@ const MCQGenerator = () => {
 
       const result = await generateContent(prompt);
       setResponse(JSON.parse(result));
+      console.log(response)
     } catch (error) {
       setResponse("Failed to generate questions. Please try again.");
       console.log(error);
@@ -78,3 +80,4 @@ const MCQGenerator = () => {
 };
 
 export default MCQGenerator;
+

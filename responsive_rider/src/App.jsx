@@ -1,9 +1,13 @@
-import Quiz from "./aicomponents/Quiz";
+
+// import Quiz from "./aicomponents/Quiz";
+
+import FloatingWordGame from "./aicomponents/FloatingWordGame";
 
 function App() {
   return (
     <>
-    <Quiz />
+    {/* <Quiz /> */}
+    <FloatingWordGame />
     </>
   );
 }
