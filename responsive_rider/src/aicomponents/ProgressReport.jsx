@@ -23,7 +23,7 @@ const ProgressReport = ({ studentId }) => {
         }
 
         // Generate AI-based progress report
-        const prompt = `Analyze the student's past performance and generate a progress report with areas of improvement: ${JSON.stringify(studentData)}. The report should be structured in JSON format suitable for rendering the following HTML structure. The JSON should be an object where each key is a section title (e.g., \"Strengths\", \"Areas for Improvement\", \"Overall Progress\") and the value for each key is an array of strings representing the points for that section. Return ONLY the JSON without backticks or language specifiers.`;
+        const prompt = `Analyze the student's past performance and generate a progress report with areas of improvement: ${JSON.stringify(studentData)}. The report should be structured in JSON format suitable for rendering the following HTML structure. The JSON should be an object where each key is a section title (e.g., "Strengths", "Areas for Improvement", "Overall Progress") and the value for each key is an array of strings representing the points for that section. Return ONLY the JSON without backticks or language specifiers.`;
         
         const aiResponse = await generateContent(prompt);
         setReport(JSON.parse(aiResponse));
