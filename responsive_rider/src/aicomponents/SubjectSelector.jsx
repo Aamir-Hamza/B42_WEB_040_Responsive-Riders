@@ -5,21 +5,30 @@ const SubjectSelector = ({ onStartQuiz }) => {
   const [selectedSubjects, setSelectedSubjects] = useState([]);
   
   const subjects = [
-    { id: 1, name: 'Mathematics', icon: '📐' },
-    { id: 2, name: 'Physics', icon: '⚡' },
-    { id: 3, name: 'Chemistry', icon: '🧪' },
-    { id: 4, name: 'Biology', icon: '🧬' },
-    { id: 5, name: 'History', icon: '📜' },
-    { id: 6, name: 'Geography', icon: '🌍' },
-    { id: 7, name: 'Literature', icon: '📚' },
-    { id: 8, name: 'Computer Science', icon: '💻' },
-    { id: 9, name: 'General Knowledge', icon: '🧠' },
-    { id: 10, name: 'Nature & Environment', icon: '🌿' },
-    { id: 11, name: 'Current Affairs', icon: '📰' },
-    { id: 12, name: 'Art & Culture', icon: '🎨' },
-    { id: 13, name: 'Space Science', icon: '🚀' },
-    { id: 14, name: 'Technology', icon: '📱' }
-  ];
+  { id: 1, name: 'Mathematics', icon: '📐' },
+  { id: 2, name: 'Physics', icon: '⚡' },
+  { id: 3, name: 'Chemistry', icon: '🧪' },
+  { id: 4, name: 'Biology', icon: '🧬' },
+  { id: 5, name: 'History', icon: '📜' },
+  { id: 6, name: 'Geography', icon: '🌍' },
+  { id: 7, name: 'Literature', icon: '📚' },
+  { id: 8, name: 'Computer Science', icon: '💻' },
+  { id: 9, name: 'General Knowledge', icon: '🧠' },
+  { id: 10, name: 'Nature & Environment', icon: '🌿' },
+  { id: 11, name: 'Current Affairs', icon: '📰' },
+  { id: 12, name: 'Art & Culture', icon: '🎨' },
+  { id: 13, name: 'Space Science', icon: '🚀' },
+  { id: 14, name: 'Technology', icon: '📱' },
+  { id: 15, name: 'Web Development', icon: '🌐' },
+  { id: 16, name: 'Mobile Development', icon: '📱' },
+  { id: 17, name: 'Cloud Computing', icon: '☁️' },
+  { id: 18, name: 'DevOps', icon: '⚙️' },
+  { id: 19, name: 'Artificial Intelligence', icon: '🤖' },
+  { id: 20, name: 'Data Science', icon: '📊' },
+  { id: 21, name: 'Cybersecurity', icon: '🔒' },
+  { id: 22, name: 'Networking', icon: '🌐' },
+  { id: 23, name: 'Linux', icon: '🐧' }
+];;
   
   const toggleSubject = (subject) => {
     setSelectedSubjects(prev => 

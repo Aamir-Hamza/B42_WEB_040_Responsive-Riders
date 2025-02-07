@@ -9,7 +9,7 @@ const MCQGenerator = () => {
   const fetchMCQ = async () => {
     setLoading(true);
     try {
-      const prompt = `Generate exact 10 multiple choice questions in JSON format for the following subject/topic. Each question should have 4 options and indicate the correct answer. Return ONLY the JSON without backticks or language specifiers.
+      const prompt = `Generate multiple choice questions in JSON format for the following subject/topic. Each question should have 4 options and indicate the correct answer. Return ONLY the JSON without backticks or language specifiers.
       Example format:
       {
         "questions": [

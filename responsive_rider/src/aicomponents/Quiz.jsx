@@ -27,14 +27,15 @@ const Quiz = () => {
   const handleStartQuiz = async (selectedSubjects) => {
     setLoading(true);
     try {
-      const prompt = `Generate 5 multiple choice questions in JSON format for the following subjects: ${selectedSubjects.join(', ')}. Each question should have 4 options and indicate the correct answer. Return ONLY the JSON without backticks or language specifiers.
+      const prompt = `Generate 10 multiple choice questions in JSON format for the following subjects: ${selectedSubjects.join(', ')}. Each question should have 4 options and indicate the correct answer. Return ONLY the JSON without backticks or language specifiers.
       Example format:
       {
         "questions": [
           {
             "question": "What is 2+2?",
             "options": ["3", "4", "5", "6"],
-            "correct_answer": "4"
+            "correct_answer": "4",
+            "Subject":"Math"
           }
         ]
       }`;
