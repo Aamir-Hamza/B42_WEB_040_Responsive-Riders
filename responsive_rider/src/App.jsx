@@ -7,9 +7,10 @@ import LandingPage from "./aicomponents/LandingPage";
 function App() {
   return (
     <>
-    <Quiz />
+    {/* <Quiz /> */}
     {/* <FloatingWordGame /> */}
     {/* <ProgressReport studentId="15PqLZyG5xT0bxP4dHuysYvpa0E2" /> */}
+    <LandingPage />
     </>
   );
 }

@@ -1,57 +1,165 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react'; // Import a specific icon
+import { loadSlim } from "@tsparticles/slim";
+import { loadCircleShape } from "@tsparticles/shape-circle";
+import ParticlesComponent from "../ParticlesComponent";
+import Confetti from 'react-confetti';
+import { 
+  Trophy, 
+  Zap, 
+  BookOpen, 
+  Users, 
+  ArrowRight 
+} from 'lucide-react';
+
+// Import all images
+import heroImage from '../images/hero-image.png';
+import backgroundImage from '../images/bg-image.png';
+import quizImage from '../images/quiz-image.png';
+import rewardsImage from '../images/rewards-image.png';
+import leaderboardImage from '../images/leaderboard-image.png';
+import aiSuggestionsImage from '../images/ai-suggestions-image.png';
 
 const LandingPage = () => {
-  return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
-      {/* Hero Section */}
-      <div className="flex flex-col items-center justify-center text-center py-20">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-          Welcome to the Future of Learning
-        </h1>
-        <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-4xl">
-          Revolutionize your learning with gamification! Complete quizzes, unlock badges, and compete in challenges to level up. Join now to start your journey!
-        </p>
-        <Link to="/register">
-          <button className="bg-yellow-500 text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-600 transition-all duration-300 flex items-center gap-2">
-            Get Started
-            <ArrowRight size={20} /> {/* Add an icon */}
-          </button>
-        </Link>
-      </div>
+  const [activeFeature, setActiveFeature] = useState(null);
+  const width = window.innerWidth;
+  const height = window.innerHeight;
 
-      {/* Key Features Section */}
-      <div className="bg-gray-800 py-16">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl text-white font-semibold mb-8">Key Features</h2>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 text-white">
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Interactive Quizzes</h3>
-              <p>Engage in exciting quizzes with instant feedback, challenges, and a timer to push your limits.</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Badges & Rewards</h3>
-              <p>Earn trophies, points, and badges as you complete quizzes and challenges. Show off your achievements!</p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Leaderboards</h3>
-              <p>See how you stack up against your peers with real-time leaderboards and track your progress.</p>
+  const particlesInit = async (engine) => {
+    await loadSlim(engine);
+    await loadCircleShape(engine);
+  };
+
+  const particlesLoaded = (container) => {
+    console.log(container);
+  };
+
+  const featureData = [
+    {
+      icon: <BookOpen className="w-12 h-12 text-purple-500" />,
+      title: "Interactive Quizzes",
+      description: "Engaging quizzes with real-time feedback and dynamic challenges.",
+      image: quizImage,
+      link: "/quizzes"
+    },
+    {
+      icon: <Trophy className="w-12 h-12 text-yellow-500" />,
+      title: "Unlock Achievements",
+      description: "Earn badges, trophies, and points as you progress.",
+      image: rewardsImage,
+      link: "/rewards"
+    },
+    {
+      icon: <Users className="w-12 h-12 text-blue-500" />,
+      title: "Climb the Ranks",
+      description: "Compete with others and track your progress on the leaderboard.",
+      image: leaderboardImage,
+      link: "/leaderboard"
+    },
+    {
+      icon: <Zap className="w-12 h-12 text-green-500" />,
+      title: "Personalized Learning",
+      description: "Get AI-driven quiz recommendations tailored to your needs.",
+      image: aiSuggestionsImage,
+      link: "/ai-suggestions"
+    }
+  ];
+
+  return (
+    <div 
+      className="min-h-screen relative overflow-hidden"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+        backdropFilter: 'blur(8px)',
+      }}
+    >
+      <div className="absolute inset-0 bg-purple-900/30 backdrop-blur-md"></div>
+
+      <div className="relative z-10">
+        <ParticlesComponent 
+          id="tsparticles" 
+          init={particlesInit} 
+          loaded={particlesLoaded} 
+          options={{
+            background: { color: { value: "transparent" } },
+            fpsLimit: 120,
+            particles: {
+              color: { value: "#ffffff" },
+              opacity: { value: 0.3 },
+              size: { value: { min: 1, max: 3 } },
+            },
+          }} 
+        />
+        <Confetti width={width} height={height} numberOfPieces={200} recycle={false} />
+
+        {/* Hero Section */}
+        <div className="container mx-auto px-6 py-16 grid md:grid-cols-2 gap-8 items-center relative">
+          <div className="space-y-6 order-2 md:order-1">
+            <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+              Level Up Your Learning
+            </h1>
+            <p className="text-lg text-white">
+              Transform education into an epic journey of discovery and achievement.
+            </p>
+            <div className="flex space-x-4">
+              <Link 
+                to="/register" 
+                className="bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white px-6 py-3 rounded-full flex items-center transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Start Your Quest <ArrowRight className="ml-2" />
+              </Link>
             </div>
           </div>
+          <div className="relative order-1 md:order-2 flex justify-center">
+            <img 
+              src={heroImage} 
+              alt="Learning Hero" 
+              className="max-w-full md:max-w-md h-auto rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
+            />
+          </div>
         </div>
-      </div>
 
-      {/* Call to Action */}
-      <div className="py-20 bg-gradient-to-r from-purple-600 to-indigo-500 text-center text-white">
-        <h2 className="text-3xl sm:text-4xl font-semibold mb-6">Ready to Level Up?</h2>
-        <p className="text-lg sm:text-xl mb-8 max-w-3xl mx-auto">
-          Join our community of learners who are transforming education into a fun and competitive experience. Start your journey today!
-        </p>
-        <Link to="/register">
-          <button className="bg-yellow-500 text-black text-lg px-8 py-3 rounded-full hover:bg-yellow-600 transition-all duration-300">
-            Sign Up Now
-          </button>
-        </Link>
+        {/* Features Section */}
+        <div className="container mx-auto px-6 py-16">
+          <h2 className="text-4xl font-bold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">
+            Discover Our Features
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {featureData.map((feature, index) => (
+              <div 
+                key={index}
+                onMouseEnter={() => setActiveFeature(index)}
+                onMouseLeave={() => setActiveFeature(null)}
+                className={`
+                  bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center transform transition-all duration-300
+                  ${activeFeature === index ? 'scale-105 shadow-2xl' : 'hover:scale-105'}
+                `}
+              >
+                <div className="mb-4 flex justify-center">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
+                <p className="text-gray-300 mb-4">{feature.description}</p>
+                <img 
+                  src={feature.image} 
+                  alt={feature.title} 
+                  className="mx-auto mb-4 rounded-lg max-h-40 object-cover"
+                />
+                <Link 
+                  className="text-purple-400 hover:text-purple-300 flex items-center justify-center"
+                >
+                  Explore <ArrowRight className="ml-2 w-4 h-4" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer */}
+        <footer className="bg-black/20 py-6 text-center relative z-20">
+          <p>&copy; {new Date().getFullYear()} EduQuiz. All rights reserved.</p>
+        </footer>
       </div>
     </div>
   );
