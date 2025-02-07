@@ -3,13 +3,13 @@ import { getAuth } from "firebase/auth";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDZP3DVhQDvgCuRQyCss1r2C_Kr8DWdv2k",
-  authDomain: "education-quiz-app.firebaseapp.com",
-  projectId: "education-quiz-app",
-  storageBucket: "education-quiz-app.firebasestorage.app",
-  messagingSenderId: "1089349108787",
-  appId: "1:1089349108787:web:87fb9cc2c1aff78da7cf46",
-  databaseURL: "https://education-quiz-app-default-rtdb.firebaseio.com"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  databaseURL: import.meta.env.VITE_FIREBASE_DATABASE_URL
 };
 
 const app = initializeApp(firebaseConfig);
