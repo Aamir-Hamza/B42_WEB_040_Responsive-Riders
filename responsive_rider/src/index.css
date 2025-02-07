@@ -1,1 +1,19 @@
 @import "tailwindcss";
+@import "react-loading-skeleton/dist/skeleton.css";
+
+/* `Analyze the student's past performance and generate a progress report with areas of improvement: ${JSON.stringify(studentData)}.  The report should be structured in JSON format suitable for rendering the following HTML structure.  The JSON should be an object where each key is a section title (e.g., "Strengths", "Areas for Improvement", "Overall Progress") and the value for each key is an array of strings representing the points for that section.  
+        For example:
+            {
+            "Strengths": [
+                "Excellent performance in vocabulary quizzes.",
+                "Demonstrates strong understanding of grammar concepts."
+            ],
+            "Areas for Improvement": [
+                "Needs to focus on improving reading comprehension skills.",
+                "Could benefit from practicing more complex sentence structures."
+            ],
+            "Overall Progress": [
+                "Consistent effort and improvement observed over the past month.",
+                "Actively participates in class discussions."
+            ]
+            } Return ONLY the JSON without backticks or language specifiers.` */

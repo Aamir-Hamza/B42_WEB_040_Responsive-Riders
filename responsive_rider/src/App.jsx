@@ -1,13 +1,14 @@
-
 // import Quiz from "./aicomponents/Quiz";
+// import FloatingWordGame from "./aicomponents/FloatingWordGame";
+import ProgressReport from "./aicomponents/ProgressReport";
 
-import FloatingWordGame from "./aicomponents/FloatingWordGame";
 
 function App() {
   return (
     <>
     {/* <Quiz /> */}
-    <FloatingWordGame />
+    {/* <FloatingWordGame /> */}
+    <ProgressReport studentId="15PqLZyG5xT0bxP4dHuysYvpa0E2" />
     </>
   );
 }
