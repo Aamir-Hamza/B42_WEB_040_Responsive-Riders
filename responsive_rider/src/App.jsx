@@ -2,6 +2,7 @@ import Quiz from "./aicomponents/Quiz";
 import FloatingWordGame from "./aicomponents/FloatingWordGame";
 import ProgressReport from "./aicomponents/ProgressReport";
 import LandingPage from "./aicomponents/LandingPage";
+import Notifications from "./Notifications";
 
 
 function App() {
@@ -9,8 +10,8 @@ function App() {
     <>
     {/* <Quiz /> */}
     {/* <FloatingWordGame /> */}
-    {/* <ProgressReport studentId="15PqLZyG5xT0bxP4dHuysYvpa0E2" /> */}
-    <LandingPage />
+    <ProgressReport studentId="15PqLZyG5xT0bxP4dHuysYvpa0E2" />
+    {/* <Notifications /> */}
     </>
   );
 }
