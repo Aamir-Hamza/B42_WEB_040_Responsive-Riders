@@ -6,7 +6,7 @@ A gamified learning platform that revolutionizes education through interactive q
 
 Check out the live application: [Educational Quiz App](https://educationquizzapp.netlify.app/)
 
-Watch our project presentation: [YouTube Demo](https://youtu.be/IXrRxiSL1VA?si=j7gY6H271-HWg3Ln)
+Watch our project presentation: [YouTube Demo](https://youtu.be/U6Oc6tjV3HA)
 
 ## ✨ Features
 
