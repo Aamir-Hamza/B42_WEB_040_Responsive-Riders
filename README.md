@@ -45,11 +45,11 @@ Watch our project presentation: [YouTube Demo](https://youtu.be/IXrRxiSL1VA?si=j
   - Badges & Reward System
   - Overall UI Design & Responsiveness
 
-- **Amir** - Technical Lead
+- **Aamir Hamza** - Technical Lead
   - Admin Panel Development
   - System Architecture
 
-- **Rohit** - Feature Lead
+- **Rahul Waghmare** - Feature Lead
   - Leaderboards & Progress Tracking
   - AI Feature Implementation
 
